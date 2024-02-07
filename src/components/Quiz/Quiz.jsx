@@ -38,7 +38,7 @@ const questions = [
         correct: 1,
     },
     {
-        title: 'Да',
+        title: 'Да?',
         variants: ['Да', 'Ладно', 'Нет'],
         correct: 0,
     },
@@ -50,6 +50,16 @@ const questions = [
     {
         title: '25 - 7',
         variants: ['18', '32', '17'],
+        correct: 0,
+    },
+    {
+        title: 'Нет?',
+        variants: ['18', '15', '17'],
+        correct: 0,
+    },
+    {
+        title: 'Хорошо',
+        variants: ['Ладно', 'Да', 'Нет'],
         correct: 0,
     },
 ]
@@ -102,7 +112,8 @@ const Quiz = () => {
     function Result({correct}) {
         return (
             <div className='result'>
-                <h1>Молодец</h1>
+                {/* <h1>Молодец</h1> */}
+                <h1>{correct >= 4 ? "Молодец!" : "Еблан?"}</h1>
                 <h2>Ты ответил правильно на {correct} из {questions.length} вопросов</h2>
                 <button onClick={() => Restart()}>Начать заново</button>
             </div>
